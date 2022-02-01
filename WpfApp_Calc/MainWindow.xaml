@@ -1,0 +1,88 @@
+﻿<Window x:Class="WpfApp_Calc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_Calc"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="330" Width="535" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="btnStyle">
+            <Setter Property="Control.FontFamily" Value="Verdana"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.FontWeight" Value="UltraBold"/>
+            <Setter Property="Control.Background" Value="#FFF0D9A0"/>
+            <Setter Property="Control.Margin" Value="5"/>
+            <Setter Property="Control.Padding" Value="5"/>
+            <Setter Property="Control.Width" Value="90"/>
+            <Setter Property="Control.Height" Value="50"/>
+        </Style>
+        <Style x:Key="btnStyle_o">
+            <Setter Property="Control.FontFamily" Value="Verdana"/>
+            <Setter Property="Control.FontSize" Value="16"/>
+            <Setter Property="Control.FontWeight" Value="UltraBold"/>
+            <Setter Property="Control.Background" Value="#FFA1C4EE"/>
+            <Setter Property="Control.Margin" Value="5"/>
+            <Setter Property="Control.Padding" Value="5"/>
+            <Setter Property="Control.Width" Value="90"/>
+            <Setter Property="Control.Height" Value="50"/>
+        </Style>
+        <Style x:Key="btnStyle_op">
+            <Setter Property="Control.FontFamily" Value="Verdana"/>
+            <Setter Property="Control.FontSize" Value="16"/>
+            <Setter Property="Control.FontWeight" Value="UltraBold"/>
+            <Setter Property="Control.Background" Value="#FFBEF19A"/>
+            <Setter Property="Control.Margin" Value="5"/>
+            <Setter Property="Control.Padding" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="3,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="txtBox" 
+                 Grid.ColumnSpan="7" Margin="2" 
+                 Height="40" Foreground="Black" 
+                 FontSize="24" FontFamily="Verdana"
+                 Background="#FFD8E7F3" BorderBrush="#FF111010"/>
+        
+        <Button Grid.Column="0" Grid.Row="1" Content="1" Style="{StaticResource btnStyle }" Click="Button_Click"/>
+        <Button Grid.Column="0" Grid.Row="2" Content="4" Style="{StaticResource btnStyle }" Click="Button_Click_3"/>
+        <Button Grid.Column="0" Grid.Row="3" Content="7" Style="{StaticResource btnStyle }" Click="Button_Click_6"/>
+        <Button Grid.Column="0" Grid.Row="4" Content="0" Style="{StaticResource btnStyle }" Click="Button_Click_9"/>
+               
+        <Button Grid.Column="1" Grid.Row="1" Content="2" Style="{StaticResource btnStyle }" Click="Button_Click_1"/>
+        <Button Grid.Column="1" Grid.Row="2" Content="5" Style="{StaticResource btnStyle }" Click="Button_Click_4"/>
+        <Button Grid.Column="1" Grid.Row="3" Content="8" Style="{StaticResource btnStyle }" Click="Button_Click_7"/>
+        <Button Grid.Column="1" Grid.Row="4" Content="," Style="{StaticResource btnStyle }" Click="Button_Click_10"/>
+        
+        <Button Grid.Column="2" Grid.Row="1" Content="3" Style="{StaticResource btnStyle }" Click="Button_Click_2"/>
+        <Button Grid.Column="2" Grid.Row="2" Content="6" Style="{StaticResource btnStyle }" Click="Button_Click_5"/>
+        <Button Grid.Column="2" Grid.Row="3" Content="9" Style="{StaticResource btnStyle }" Click="Button_Click_8"/>
+        <Button Grid.Column="2" Grid.Row="4" Content="←" Style="{StaticResource btnStyle_o }" Click="Button_Click_Z"/>
+
+        <Button Grid.Column="4" x:Name="Plus" Grid.Row="3" Content="+" Style="{StaticResource btnStyle_o }" Click="Button_Click_Plus"/>
+        <Button Grid.Column="5" Grid.Row="3" Content="-" Style="{StaticResource btnStyle_o }" Click="Button_Click_Minus"/>
+        <Button Grid.Column="4" Grid.Row="4" Content="*" Style="{StaticResource btnStyle_o }" Click="Button_Click_Umn"/>
+        <Button Grid.Column="5" Grid.Row="4" Content="/" Style="{StaticResource btnStyle_o }" Click="Button_Click_Div"/>
+
+
+        <Button Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Content="C" Style="{StaticResource btnStyle_op }" Click="Button_Click_C"/>
+        <Button Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Content="=" Style="{StaticResource btnStyle_op }" Click="Button_Click_Rezult"/>
+    </Grid>
+    
+</Window>
